@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}سجل الاستعلامات - محلل الاستعلامات العلمية{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h2 class="rtl">سجل الاستعلامات</h2>
+            <p class="lead rtl">فيما يلي سجل بجميع استعلاماتك السابقة ونتائجها.</p>
+        </div>
+        <div class="col-md-4 text-end">
+            <a href="{{ url_for('dashboard') }}" class="btn btn-primary rtl">
+                <i class="fas fa-plus me-2"></i> استعلام جديد
+            </a>
+        </div>
+    </div>
+
+    <div class="card rtl">
+        <div class="card-header bg-light">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h4 class="mb-0">استعلاماتك السابقة</h4>
+                </div>
+                <div class="col-auto">
+                    <span class="badge bg-primary">{{ queries|length }} استعلام</span>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            {% if queries %}
+                <div class="list-group">
+                    {% for query in queries %}
+                        <div class="list-group-item list-group-item-action flex-column align-items-start history-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1 history-query" style="cursor: pointer;">
+                                    <i class="fas fa-question-circle me-2 text-primary"></i> {{ query.original_query }}
+                                </h5>
+                                <small class="text-muted">{{ query.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
+                            </div>
+                            <p class="mb-1"><small class="text-muted">تمت معالجته كـ: {{ query.processed_query }}</small></p>
+                            <div class="history-result d-none mt-3">
+                                <div class="mb-2"><strong>النتيجة:</strong></div>
+                                {{ query.result|safe }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="text-center py-5">
+                    <i class="fas fa-search fa-3x mb-3 text-muted"></i>
+                    <h5>لا توجد استعلامات سابقة</h5>
+                    <p>عندما تقوم بإجراء استعلامات، ستظهر هنا لتتمكن من الرجوع إليها لاحقاً.</p>
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-primary mt-3">بدء استعلام جديد</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

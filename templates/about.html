@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block title %}عن النظام - محلل الاستعلامات العلمية{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <h2 class="mb-4 rtl">عن محلل الاستعلامات العلمية</h2>
+            <div class="card rtl">
+                <div class="card-body">
+                    <p class="lead">محلل الاستعلامات العلمية هو نظام ذكي يهدف إلى تبسيط العمليات العلمية والرياضية المعقدة من خلال استخدام الذكاء الاصطناعي.</p>
+                    
+                    <h4 class="mt-4">ما هو محلل الاستعلامات العلمية؟</h4>
+                    <p>
+                        هو نظام ذكي قادر على استقبال الأسئلة العلمية أو الرياضية من المستخدمين بصيغة طبيعية (Natural Language)، 
+                        وتحويلها تلقائيًا إلى صيغة استعلام دقيق يفهمه محرك Wolfram Alpha لحل المسائل المعقدة بدقة، 
+                        ثم إعادة عرض النتيجة للمستخدم بلغة مفهومة.
+                    </p>
+                    
+                    <h4 class="mt-4">كيف يعمل النظام؟</h4>
+                    <ol>
+                        <li class="mb-2">
+                            <strong>إدخال المستخدم:</strong> يقوم المستخدم بكتابة سؤاله العلمي أو الرياضي بأسلوب طبيعي.
+                        </li>
+                        <li class="mb-2">
+                            <strong>التحليل والتفسير:</strong> يستخدم النظام تقنية Google Gemini لفهم السياق العلمي للسؤال وتحليل المسألة وتحويلها إلى صيغة مفهومة لـ Wolfram Alpha.
+                        </li>
+                        <li class="mb-2">
+                            <strong>معالجة الاستعلام:</strong> يتم إرسال الاستعلام المعالج إلى Wolfram Alpha API.
+                        </li>
+                        <li class="mb-2">
+                            <strong>استرجاع النتيجة:</strong> يتم استقبال النتائج الدقيقة من Wolfram Alpha وإعادة صياغتها بلغة مفهومة للمستخدم.
+                        </li>
+                        <li>
+                            <strong>عرض النتيجة النهائية:</strong> يحصل المستخدم على الإجابة المطلوبة بطريقة احترافية وسهلة الفهم.
+                        </li>
+                    </ol>
+                    
+                    <h4 class="mt-4">مميزات النظام</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <li>تفاعل طبيعي مع المستخدم دون الحاجة لصيغ معقدة</li>
+                                <li>ذكاء اصطناعي متقدم لمعالجة اللغة الطبيعية بدقة</li>
+                                <li>استخدام محرك Wolfram Alpha لضمان نتائج دقيقة علميًا</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <li>واجهة مستخدم سهلة الاستخدام وجذابة</li>
+                                <li>حفظ سجل الاستعلامات للرجوع إليها لاحقًا</li>
+                                <li>دعم العديد من المجالات العلمية والرياضية</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h4 class="mt-4">التقنيات المستخدمة</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-3">
+                                <div class="card-header text-center">
+                                    <i class="fab fa-google fa-2x my-2"></i>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Google Gemini</h5>
+                                    <p class="card-text">نموذج ذكاء اصطناعي متطور لمعالجة اللغة الطبيعية وفهم السياق العلمي للاستعلامات.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-3">
+                                <div class="card-header text-center">
+                                    <i class="fas fa-calculator fa-2x my-2"></i>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Wolfram Alpha</h5>
+                                    <p class="card-text">محرك حوسبة معرفي متقدم قادر على معالجة الاستعلامات العلمية وتقديم إجابات دقيقة.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-3">
+                                <div class="card-header text-center">
+                                    <i class="fab fa-python fa-2x my-2"></i>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Flask & PostgreSQL</h5>
+                                    <p class="card-text">تقنيات الويب الحديثة لبناء واجهة مستخدم سلسة وقاعدة بيانات موثوقة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mb-5">
+        <div class="col-md-12 text-center">
+            <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg rtl">
+                <i class="fas fa-rocket me-2"></i> جرب النظام الآن
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

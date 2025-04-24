@@ -1,0 +1,380 @@
+/* Main Styles for Scientific Query Processor */
+
+/* RTL support for Arabic text */
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Body and general styling */
+body {
+    font-family: 'Tajawal', 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header and navigation */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: white !important;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    padding: 5rem 0;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+/* Cards and containers */
+.card {
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+}
+
+.query-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+/* Form elements */
+.form-control {
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+textarea.form-control {
+    min-height: 120px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Results display */
+.result-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+}
+
+.result-header {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.result-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+/* Rich result formatting */
+.rich-results {
+    padding: 1rem 0;
+}
+
+.result-pod {
+    background-color: #f9f9ff;
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    margin-bottom: 2rem;
+}
+
+.result-pod:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.pod-title {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.pod-content {
+    padding: 0.5rem;
+}
+
+.subpod-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+}
+
+.subpod-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.subpod-item img {
+    max-width: 100%;
+    border: 1px solid #eee;
+    transition: all 0.3s;
+    border-radius: 6px;
+}
+
+.subpod-item img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pod-divider {
+    border-top: 1px dashed #ddd;
+    margin: 2rem 0;
+}
+
+/* تنسيق النصوص الرياضية العربية */
+.arabic-math {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500;
+    direction: rtl;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+/* تنسيق لعرض الصيغ الرياضية بشكل جميل */
+.math-formula {
+    background: linear-gradient(to left, #f8f9fa, #e9ecef);
+    border-radius: 8px;
+    padding: 1rem;
+    display: inline-block;
+    margin: 0.8rem 0;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: bold;
+    direction: rtl;
+    min-width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.math-formula:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* تنسيق الكسور */
+.fraction {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 0.3em;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500;
+}
+
+.fraction .numerator {
+    display: block;
+    border-bottom: 1.5px solid #333;
+    padding: 0.15em 0.5em;
+    font-size: 0.95em;
+}
+
+.fraction .denominator {
+    display: block;
+    padding: 0.15em 0.5em;
+    font-size: 0.95em;
+}
+
+/* تنسيق الأسس */
+sup {
+    font-size: 0.65em;
+    position: relative;
+    top: -0.5em;
+    margin-right: 0.1em;
+    color: #1e4d82;
+    font-weight: bold;
+}
+
+/* تنسيق الأسس القياسية */
+.math-formula .exponent, .arabic-math .exponent {
+    font-size: 0.75em;
+    position: relative;
+    top: -0.5em;
+    color: #1e4d82;
+}
+
+/* تنسيق للصيغ الرياضية المميزة */
+.math-highlight {
+    background: linear-gradient(135deg, rgba(32, 77, 131, 0.05), rgba(32, 77, 131, 0.15));
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+    direction: rtl;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+/* تحسين عرض النتيجة النهائية */
+.result-final {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(52, 152, 219, 0.15));
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    border-bottom: 4px solid #3498db;
+}
+
+/* History items */
+.history-item {
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+}
+
+.history-item:hover {
+    transform: translateY(-5px);
+}
+
+.history-query {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.history-result {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    white-space: pre-line;
+}
+
+/* Authentication forms */
+.auth-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.auth-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Loader */
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #3498db;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .query-form, .result-container {
+        padding: 1.5rem;
+    }
+}

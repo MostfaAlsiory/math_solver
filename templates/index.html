@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}محلل الاستعلامات العلمية - الرئيسية{% endblock %}
+
+{% block content %}
+<section class="hero text-center">
+    <div class="container">
+        <h1>محلل الاستعلامات العلمية</h1>
+        <p>نظام ذكي يحول استفساراتك العلمية بلغة طبيعية إلى إجابات دقيقة عبر تقنيات الذكاء الاصطناعي المتقدمة.</p>
+        <div>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('dashboard') }}" class="btn btn-light btn-lg">ابدأ الاستفسار الآن</a>
+            {% else %}
+                <a href="{{ url_for('register') }}" class="btn btn-light btn-lg me-2">إنشاء حساب</a>
+                <a href="{{ url_for('login') }}" class="btn btn-outline-light btn-lg">تسجيل الدخول</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="container my-5">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <i class="fas fa-brain fa-3x my-3"></i>
+                    <h3>ذكاء اصطناعي متقدم</h3>
+                </div>
+                <div class="card-body rtl">
+                    <p>يستخدم النظام تقنية Google Gemini لفهم استفساراتك العلمية المعقدة وتحويلها إلى صيغة دقيقة.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <i class="fas fa-calculator fa-3x my-3"></i>
+                    <h3>حلول علمية دقيقة</h3>
+                </div>
+                <div class="card-body rtl">
+                    <p>يستعين بمحرك Wolfram Alpha لحل المسائل العلمية والرياضية المعقدة بدقة وتقديم النتائج مع الشرح.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <i class="fas fa-language fa-3x my-3"></i>
+                    <h3>سهولة الاستخدام</h3>
+                </div>
+                <div class="card-body rtl">
+                    <p>اكتب سؤالك بلغتك الطبيعية دون الحاجة إلى صياغات معقدة، واحصل على إجابات واضحة وسهلة الفهم.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container my-5">
+    <div class="row align-items-center">
+        <div class="col-md-6 rtl">
+            <h2>كيف يعمل النظام؟</h2>
+            <ol class="mt-4">
+                <li class="mb-3">
+                    <strong>إدخال السؤال:</strong> اكتب سؤالك العلمي أو الرياضي بلغة طبيعية.
+                </li>
+                <li class="mb-3">
+                    <strong>تحليل بالذكاء الاصطناعي:</strong> يقوم Google Gemini بتحليل سؤالك وفهم السياق العلمي.
+                </li>
+                <li class="mb-3">
+                    <strong>تحويل الاستعلام:</strong> يتم تحويل سؤالك إلى صيغة دقيقة يفهمها Wolfram Alpha.
+                </li>
+                <li class="mb-3">
+                    <strong>معالجة الاستعلام:</strong> يرسل الاستعلام إلى Wolfram Alpha للحصول على النتائج.
+                </li>
+                <li>
+                    <strong>عرض النتائج:</strong> تظهر النتائج مع الشرح والرسومات التوضيحية إن وجدت.
+                </li>
+            </ol>
+            <div class="mt-4">
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-primary">جرب النظام الآن</a>
+                {% else %}
+                    <a href="{{ url_for('register') }}" class="btn btn-primary">سجل وابدأ الآن</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+            <div class="card">
+                <div class="card-header">
+                    أمثلة على الأسئلة التي يمكن طرحها
+                </div>
+                <div class="card-body rtl">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">ما هو التفاضل الأول لدالة sin(x²)؟</li>
+                        <li class="list-group-item">كم يبلغ تسارع جسم كتلته 2 كغ ويتعرض لقوة مقدارها 10 نيوتن؟</li>
+                        <li class="list-group-item">ما هي القيمة المتوقعة لحل المعادلة التفاضلية y' + 2y = sin(x) مع الشرط الابتدائي y(0) = 1؟</li>
+                        <li class="list-group-item">احسب قيمة المحدد لمصفوفة 3×3 حيث a₁₁=2, a₁₂=1, a₁₃=3, a₂₁=4, a₂₂=5, a₂₃=6, a₃₁=7, a₃₂=8, a₃₃=9</li>
+                        <li class="list-group-item">ما هي طاقة الإلكترون في المستوى الثالث لذرة الهيدروجين؟</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

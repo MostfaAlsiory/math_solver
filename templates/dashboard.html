@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}لوحة التحكم - محلل الاستعلامات العلمية{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-4 rtl">مرحباً، {{ current_user.username }}!</h2>
+            <p class="lead rtl">استخدم النموذج أدناه لطرح سؤال علمي أو رياضي بلغة طبيعية. سيقوم النظام بمعالجته وتقديم الإجابة.</p>
+        </div>
+    </div>
+
+    <div class="query-form rtl">
+        <h3 class="mb-4">طرح سؤال علمي</h3>
+        <form id="query-form" method="POST" action="{{ url_for('process_query') }}">
+            <div class="mb-3">
+                <label for="query-input" class="form-label">ما هو سؤالك العلمي أو الرياضي؟</label>
+                <textarea class="form-control" id="query-input" name="query" rows="4" placeholder="مثال: ما هو التفاضل الأول لدالة sin(x²)؟"></textarea>
+                <div class="form-text mt-2">
+                    <i class="fas fa-lightbulb me-1"></i> يمكنك طرح أسئلة علمية أو رياضية معقدة بلغتك الطبيعية دون الحاجة لصياغات خاصة.
+                </div>
+            </div>
+            <div class="d-grid gap-2 col-md-6 mx-auto">
+                <button type="submit" class="btn btn-primary btn-lg" id="submit-button">
+                    <i class="fas fa-atom me-2"></i> معالجة الاستعلام
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="result-container" id="result-container" style="display: none;">
+        <!-- Results will be displayed here by JavaScript -->
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <div class="card rtl">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0">أمثلة على الأسئلة</h4>
+                </div>
+                <div class="card-body">
+                    <p>يمكنك طرح أسئلة مثل:</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group mb-3">
+                                <li class="list-group-item">ما هو التفاضل الأول لدالة sin(x²)؟</li>
+                                <li class="list-group-item">كم يبلغ تسارع جسم كتلته 2 كغ ويتعرض لقوة مقدارها 10 نيوتن؟</li>
+                                <li class="list-group-item">احسب تكامل x² sin(x) من 0 إلى π</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item">حل المعادلة التفاضلية y'' + 4y = 0 حيث y(0) = 1, y'(0) = 2</li>
+                                <li class="list-group-item">ما هي طاقة الربط النووية للهيليوم-4؟</li>
+                                <li class="list-group-item">احسب المصفوفة المقلوبة لـ [[1,2],[3,4]]</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4 mb-5">
+        <div class="col-md-12 text-center">
+            <a href="{{ url_for('history') }}" class="btn btn-outline-primary me-2">
+                <i class="fas fa-history me-2"></i> عرض سجل الاستعلامات
+            </a>
+            <button onclick="downloadProject()" class="btn btn-success">
+                <i class="fas fa-download me-2"></i> تنزيل المشروع
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}

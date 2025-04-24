@@ -1,0 +1,3 @@
+DATABASE_URL=postgresql://username:password@localhost:5432/dbname
+WOLFRAM_APP_ID=U7R6YG-4E94Q27U2V
+GEMINI_API_KEY=AIzaSyAAtQ09n5DxUotf9jT0I5Ty76ae69vJtXg
